@@ -1,24 +1,22 @@
+import { Fragment } from 'react'; // 트리구조를 만들수 있는 컴포넌트 개념이다.
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const headerSytle = {
+    backgroundColor: 'orange',
+    height: '50px',
+    color: 'blue',
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header style={headerSytle}>
+        <button type="button">로그인</button>
       </header>
-    </div>
+
+      <img src={logo} alt="로고" />
+    </>
   );
 }
 
