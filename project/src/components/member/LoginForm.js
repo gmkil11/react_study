@@ -1,34 +1,16 @@
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
-
+import MainTitle from '../commons/MainTitle';
 const LoginForm = () => {
-  const { t, i18n } = useTranslation();
-  const [langauge, setLanguage] = useState('한국어');
-
-  const handleLanguage = (e) => {
-    const el = e.currentTarget;
-    const lang = el.dataset.lang;
-    i18n.changeLanguage(lang);
-    setLanguage(lang === 'ko' ? '한국어' : '영어');
-  };
-
+  const { t } = useTranslation();
   return (
     <>
-      <h1>{t('로그인')}</h1>
-      <div>
-        {t('현재언어')} : {langauge}
-      </div>
+      <MainTitle>{t('로그인')}</MainTitle>
+
       <form>
         <input type="text" name="userId" placeholder={t('아이디')} />
         <input type="password" name="userPw" placeholder={t('비밀번호')} />
         <button type="submit">{t('로그인')}</button>
       </form>
-      <button type="button" onClick={handleLanguage} data-lang="ko">
-        한국어
-      </button>
-      <button type="button" onClick={handleLanguage} data-lang="en">
-        English
-      </button>
     </>
   );
 };
